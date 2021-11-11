@@ -18,6 +18,13 @@ function App() {
 
   return (
     <div className="App">
+      <div className="user-list-container">
+        <div className="user-container">
+          <div className="user-name">Name</div>
+          <div className="user-email">Email</div>
+        </div>
+      </div>
+
       <ReactPaginate pageCount={10}
         containerClassName="pagination-container"
         pageClassName="page"
