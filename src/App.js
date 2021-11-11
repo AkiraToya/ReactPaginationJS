@@ -6,8 +6,8 @@ function App() {
   let [users, setUsers] = useState([])
   let [pageCount, setPageCount] = useState(0)
 
-  let fetchUsers = async () => {
-    let request = await fetch("https://jsonplaceholder.typicode.com/users?_page=1&_limit=3")
+  let fetchUsers = async (page=1) => {
+    let request = await fetch(`https://jsonplaceholder.typicode.com/users?_page=${page}&_limit=3`)
     let requestedData = await request.json()
 
     let totalPages = Math.ceil(10/3)
@@ -40,6 +40,10 @@ function App() {
         nextClassName="next"
         breakClassName="break"
         activeClassName="active"
+
+        onPageChange={(page) => {
+          fetchUsers(page.selected + 1)
+        }}
       />
     </div>
   );
