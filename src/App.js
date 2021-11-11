@@ -1,6 +1,7 @@
 import './App.css';
 import ReactPaginate from 'react-paginate';
 import { useEffect, useState } from 'react';
+import PaginationComponent from './PaginationComponent';
 
 function App() {
   let [users, setUsers] = useState([])
@@ -21,6 +22,10 @@ function App() {
     fetchUsers()
   }, [])
 
+  let onPageChange = (page) => {
+    fetchUsers(page.selected + 1)
+  }
+
   return (
     <div className="App">
       <div className="user-list-container">
@@ -33,17 +38,9 @@ function App() {
         
       </div>
 
-      <ReactPaginate pageCount={pageCount}
-        containerClassName="pagination-container"
-        pageClassName="page"
-        previousClassName="prev"
-        nextClassName="next"
-        breakClassName="break"
-        activeClassName="active"
-
-        onPageChange={(page) => {
-          fetchUsers(page.selected + 1)
-        }}
+      <PaginationComponent 
+        pageCount={pageCount}
+        onPageChange={onPageChange}
       />
     </div>
   );
