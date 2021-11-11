@@ -1,8 +1,10 @@
 import './App.css';
 import ReactPaginate from 'react-paginate';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
+  let [users, setUsers] = useState([])
+  let [pageCount, setPageCount] = useState(0)
 
   let fetchUsers = async () => {
     let request = await fetch("https://jsonplaceholder.typicode.com/users?_page=1&_limit=3")
@@ -10,6 +12,9 @@ function App() {
 
     let totalPages = Math.ceil(10/3)
     let datas = requestedData
+
+    setPageCount(totalPages)
+    setUsers(datas)
   }
 
   useEffect(() => {
@@ -19,13 +24,16 @@ function App() {
   return (
     <div className="App">
       <div className="user-list-container">
-        <div className="user-container">
-          <div className="user-name">Name</div>
-          <div className="user-email">Email</div>
-        </div>
+        {users.map((user, index) => 
+          <div className="user-container" key={index}>
+            <div className="user-name">{user.name}</div>
+            <div className="user-email">{user.email}</div>
+          </div>
+        )}
+        
       </div>
 
-      <ReactPaginate pageCount={10}
+      <ReactPaginate pageCount={pageCount}
         containerClassName="pagination-container"
         pageClassName="page"
         previousClassName="prev"
