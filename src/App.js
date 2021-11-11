@@ -2,6 +2,7 @@ import './App.css';
 import ReactPaginate from 'react-paginate';
 import { useEffect, useState } from 'react';
 import PaginationComponent from './PaginationComponent';
+import Users from './modules/Users';
 
 function App() {
   let [users, setUsers] = useState([])
@@ -28,15 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="user-list-container">
-        {users.map((user, index) => 
-          <div className="user-container" key={index}>
-            <div className="user-name">{user.name}</div>
-            <div className="user-email">{user.email}</div>
-          </div>
-        )}
-        
-      </div>
+      <Users users={users} />
 
       <PaginationComponent 
         pageCount={pageCount}
