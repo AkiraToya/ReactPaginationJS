@@ -7,7 +7,7 @@ export async function fetchDatas(url = "", page = 1) {
     let request = await fetch(url.replace("[page]", page))
     let requestedData = await request.json()
 
-    let totalPages = Math.ceil(10 / 3)
+    let totalPages = Math.ceil(200 / 3)
     let datas = requestedData
 
     return {totalPages: totalPages, datas: datas}

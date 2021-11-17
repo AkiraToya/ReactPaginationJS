@@ -1,10 +1,10 @@
 import './App.css';
-import UsersComponentClass from './modules/UsersComponentClass';
+import TodosComponentClass from './modules/Todos/TodosComponentClass';
 
 function App() {
   return (
     <div className="App">
-      <UsersComponentClass />
+      <TodosComponentClass />
     </div>
   );
 }

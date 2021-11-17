@@ -1,6 +1,7 @@
+import './Users.css'
 import React from 'react';
 import Users from './Users';
-import { API } from '../API';
+import { API } from '../../API';
 import GenericComponentClass from '../GenericComponentClass';
 
 export default class UsersComponentClass extends GenericComponentClass{

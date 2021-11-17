@@ -1,6 +1,6 @@
 import React from 'react';
-import PaginationComponent from './PaginationComponent';
-import { fetchDatas } from './Helper';
+import PaginationComponent from '../PaginationComponent';
+import { fetchDatas } from '../Helper';
 
 export default class GenericComponentClass extends React.Component{
     url = ""

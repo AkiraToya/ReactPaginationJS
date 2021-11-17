@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import PaginationComponent from './../PaginationComponent';
+import PaginationComponent from '../../PaginationComponent';
 import Users from './Users';
-import { fetchDatas } from './../Helper';
+import { fetchDatas } from '../../Helper';
 
 export default function UsersComponent() {
     let url = `https://jsonplaceholder.typicode.com/users?_page=[page]&_limit=3`

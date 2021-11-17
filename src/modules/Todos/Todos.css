@@ -1,0 +1,24 @@
+.todo-list-container{
+  display: block;
+  margin: 20px auto;
+  width: 500px;
+  padding: 20px;
+  border: 1px solid lightblue;
+}
+
+.todo-container{
+  display: flex;
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: 1px solid lightblue;
+  color: #555555;
+}
+
+.todo-container:last-child{
+  border-bottom: none;
+}
+
+.todo-name{
+  text-align: left;
+  font-weight: bold;
+}

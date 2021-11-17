@@ -22,35 +22,3 @@
 .active{
   font-weight: bold;
 }
-
-.user-list-container{
-  display: block;
-  margin: 20px auto;
-  width: 500px;
-  padding: 20px;
-  border: 1px solid lightblue;
-}
-
-.user-container{
-  display: flex;
-  width: 100%;
-  padding: 5px 0;
-  border-bottom: 1px solid lightblue;
-  color: #555555;
-}
-
-.user-container:last-child{
-  border-bottom: none;
-}
-
-.user-name{
-  text-align: left;
-  flex-basis: 60%;
-  font-weight: bold;
-}
-
-.user-email{
-  text-align: right;
-  flex-basis: 40%;
-  border-left: 1px solid lightblue;
-}
