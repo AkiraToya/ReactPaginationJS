@@ -10,6 +10,13 @@ export default function PaginationComponent({pageCount, onPageChange}){
             breakClassName="break"
             activeClassName="active"
 
+            breakLabel="(...)"
+            previousLabel="< Prev"
+            nextLabel="Next >"
+
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={2}
+
             onPageChange={(page) => { onPageChange(page.selected) }}
         />
     )
